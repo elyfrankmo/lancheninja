@@ -165,6 +165,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * REPOSITORIES
+         */
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
@@ -176,6 +181,8 @@ return [
         // LancheNinja\Providers\BroadcastServiceProvider::class,
         LancheNinja\Providers\EventServiceProvider::class,
         LancheNinja\Providers\RouteServiceProvider::class,
+
+        LancheNinja\Providers\RepositoryServiceProvider::class,
 
     ],
 
