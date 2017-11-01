@@ -5,6 +5,7 @@ namespace LancheNinja\Http\Controllers;
 use Illuminate\Http\Request;
 use LancheNinja\Http\Requests\AdminClientRequest;
 use LancheNinja\Repositories\ClientRepository;
+use LancheNinja\Services\ClientService;
 
 class ClientsController extends Controller
 {
@@ -15,12 +16,19 @@ class ClientsController extends Controller
     private $repository;
 
     /**
+     * @var ClientService $clientService
+     */
+    private $clientService;
+
+
+    /**
      * ClientsController constructor.
      * @param ClientRepository $repository
      */
-    public function __construct(ClientRepository $repository)
+    public function __construct(ClientRepository $repository,ClientService $clientService)
     {
         $this->repository = $repository;
+        $this->clientService = $clientService;
     }
 
     public function index()
@@ -41,7 +49,7 @@ class ClientsController extends Controller
     {
 
         $data = $request->all();
-        $this->repository->create($data);
+        $this->clientService->create($data);
 
         return redirect()->route('admin.clients.index');
 
@@ -60,7 +68,7 @@ class ClientsController extends Controller
     {
 
         $data = $request->all();
-        $this->repository->update($data,$id);
+        $this->clientService->update($data,$id);
 
         return redirect()->route('admin.clients.index');
 
