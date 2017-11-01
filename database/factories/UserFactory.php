@@ -53,3 +53,20 @@ $factory->define(LancheNinja\Models\Client::class,function(Faker $faker){
     ];
 
 });
+
+$factory->define(LancheNinja\Models\Order::class,function(Faker $faker){
+
+    return [
+        'client_id' => rand(1,10),
+        'total' => rand(50,100),
+        'status'=> 0,
+    ];
+
+});
+
+$factory->define(LancheNinja\Models\OrderItem::class,function(Faker $faker){
+
+    return [
+    ];
+
+});

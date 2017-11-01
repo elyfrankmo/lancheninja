@@ -31,5 +31,9 @@ class UserTableSeeder extends Seeder
             $u->client()->save(factory(\LancheNinja\Models\Client::class)->make());
 
         });
+
+        factory(\LancheNinja\Models\User::class,3)->create([
+            'role' => 'deliveryman',
+        ]);
     }
 }

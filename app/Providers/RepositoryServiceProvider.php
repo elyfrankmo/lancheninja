@@ -30,5 +30,9 @@ class RepositoryServiceProvider extends ServiceProvider
             'LancheNinja\Repositories\UserRepository',
             'LancheNinja\Repositories\UserRepositoryEloquent'
         );
+        $this->app->bind(
+            'LancheNinja\Repositories\OrderRepository',
+            'LancheNinja\Repositories\OrderRepositoryEloquent'
+        );
     }
 }

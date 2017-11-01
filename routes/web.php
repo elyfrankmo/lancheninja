@@ -40,4 +40,8 @@ Route::group(['prfix'=>'admin','middleware'=>'auth.checkrole','as'=>'admin.'], f
     Route::post('products/store',['as'=>'products.store','uses' => 'ProductsController@store']);
     Route::get('products/destroy/{id}',['as'=>'products.destroy','uses' => 'ProductsController@destroy']);
 
+    Route::get('orders',['as'=>'orders.index','uses' => 'OrdersController@index']);
+    Route::get('orders/edit/{id}',['as'=>'orders.edit','uses' => 'OrdersController@edit']);
+    Route::post('orders/update/{id}',['as'=>'orders.update','uses' => 'OrdersController@update']);
+
 });

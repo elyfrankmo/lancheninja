@@ -22,7 +22,7 @@ class OrderItem extends Model implements Transformable
         return $this->hasMany(Order::class);
     }
 
-    public function products()
+    public function product()
     {
         return $this->belongsTo(Product::class);
     }
